@@ -19,6 +19,11 @@ app.use(express.json());
 app.use(cookieParser());
 app.use("/api/auth", authRoutes);
 
+app.get("/", (req, res) => {
+    res.send("Server is alive!");
+});
+  
+
 app.listen(PORT, ()=>{
     connectDB();
     console.log("Server is Running on Port:", PORT);
